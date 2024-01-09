@@ -15,7 +15,7 @@ func main() {
 	fs.Add(1)
 	fs.SearchFile(config.GetDirectory(), config.GetFileName())
 	fs.Wait()
-	totalTime := time.Now().Local().UTC().Sub(startTime)
+	totalTime := time.Since(startTime)
 	fs.PrintMatchedPaths()
 	fmt.Printf("Total matched files found %d and it took %d ms to search\n", len(fs.MatchedFiles()), totalTime.Milliseconds())
 }
